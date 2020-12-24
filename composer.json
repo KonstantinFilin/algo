@@ -1,0 +1,19 @@
+{
+    "name": "kfilin/algo",
+    "description": "PHP implementations of different algorithm",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Konstantin S. Filin",
+            "email": "info@kfilin.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Algo\\": "src/"
+        }
+    }
+
+}
