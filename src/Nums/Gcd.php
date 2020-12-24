@@ -25,7 +25,7 @@ class Gcd {
     }
 
     private function calc(int $a, int $b): int {
-echo $a . ":" . $b . PHP_EOL;
+
         if ($a == $b) {
             $this->log[] = [
                 $a, $b, "Stop"

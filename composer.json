@@ -1,6 +1,6 @@
 {
     "name": "kfilin/algo",
-    "description": "PHP implementations of different algorithm",
+    "description": "PHP implementations of different algorithms",
     "type": "library",
     "license": "MIT",
     "authors": [
