@@ -39,7 +39,9 @@ class Gcd {
             ];
             return $this->calc($a - $b, $b);
         }
-
+            $this->log[] = [
+                $a, $b, "b = b - a (" . $b . " - " . $a . " = " . ( $b - $a ) . ")"
+            ];
         return $this->calc($a, $b - $a);
     }
 
