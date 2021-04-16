@@ -5,7 +5,7 @@ namespace Algo\Nums;
 class Gcd {
 
     private $log = [
-        [ 'a', 'b', 'calculation 1', 'calculation 2']
+        [ 'a', 'b', 'Calculation digits', 'Calculation numbers' ]
     ];
 
     public function calc(int $a, int $b): int {

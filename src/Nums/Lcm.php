@@ -3,25 +3,30 @@
 namespace Algo\Nums;
 
 class Lcm {
-    /**
-     *
-     * @var int
-     */
-    public $a;
-
-    /**
-     *
-     * @var int
-     */
-    public $b;
-
     private $log = [
-        [ 'a', 'b', 'calculation']
+        [ 'Formula', 'Calculations']
     ];
 
-    public function __construct(int $a, int $b) {
-        $this->a = $a;
-        $this->b = $b;
+    public function calc(int $a, int $b): int {
+        $gcdCalculator = new Gcd();
+        $gcd = $gcdCalculator->calc($a, $b);
+
+        $this->log[] = [ 'gcd(a, b)', $gcd ];
+
+        if ($gcd == 0) {
+            return 0;
+        }
+
+        $multiple = abs($a * $b);
+        $this->log[] = [ '|a * b|', $multiple ];
+
+        $ans = $multiple / $gcd;
+        $this->log[] = [ '|a * b| / gcd(a, b)', $ans ];
+
+        return $ans;
     }
 
+    function getLog(): array {
+        return $this->log;
+    }
 }

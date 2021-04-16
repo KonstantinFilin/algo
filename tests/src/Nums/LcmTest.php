@@ -17,7 +17,6 @@ class LcmTest extends \PHPUnit\Framework\TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp(): void {
-        $this->object = new Lcm;
     }
 
     /**
@@ -29,4 +28,33 @@ class LcmTest extends \PHPUnit\Framework\TestCase {
     }
 
 
+    /**
+     * @covers Algo\Nums\Lcm::get
+     * @dataProvider getProvider
+     */
+    public function testGet($a, $b, $expected) {
+        $algo = new Lcm();
+        $this->assertEquals($expected, $algo->calc($a, $b));
+    }
+
+    public function getProvider() {
+        return [
+            [ 4, 6, 12 ],
+            [ 21, 6, 42 ],
+            [ 16, 20, 80 ],
+        ];
+    }
+
+    /**
+     * @covers Algo\Nums\Gcd::getLog
+     * @todo   Implement testGetLog().
+     */
+    public function testGetLog() {
+        $algo = new Lcm();
+        $algo->calc(21, 6);
+        $log = $algo->getLog();
+        $this->assertNotEmpty($log);
+        $this->assertIsArray($log);
+        $this->assertCount(4, $log);
+    }
 }
