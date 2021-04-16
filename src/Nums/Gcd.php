@@ -11,7 +11,7 @@ class Gcd {
     public function calc(int $a, int $b): int {
         if ($a == $b) {
             $this->log[] = [
-                $a, $b, "Stop"
+                $a, $b, "Stop", ""
             ];
             return $a;
         }
