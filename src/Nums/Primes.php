@@ -3,7 +3,14 @@
 namespace Algo\Nums;
 
 class Primes {
-    public static function calc(int $n): int {
+
+    /**
+     *
+     * @var array
+     */
+    protected $log = [];
+
+    public function calc(int $n): int {
         if ($n <= 0) {
             return 0;
         }
@@ -13,7 +20,7 @@ class Primes {
         $start = $ans[$ansCnt - 1] + 1;
 
         while ($ansCnt < $n) {
-            if (self::isPrimeFor($start, $ans)) {
+            if ($this->isPrimeFor($start, $ans)) {
                 $ans[] = $start;
                 $ansCnt = count($ans);
             }
@@ -21,10 +28,14 @@ class Primes {
             $start += 1;
         }
 
+        foreach ($ans as $idx => $a) {
+            $this->log[] = [ $idx + 1, $a ];
+        }
+
         return $ans[$n - 1];
     }
 
-    public static function isPrimeFor(int $number, array $tryList): bool {
+    public function isPrimeFor(int $number, array $tryList): bool {
         foreach ($tryList as $try) {
             if ($number % $try === 0) {
                 return false;
@@ -32,5 +43,9 @@ class Primes {
         }
 
         return true;
+    }
+
+    function getLog(): array {
+        return $this->log;
     }
 }

@@ -8,10 +8,18 @@ namespace Algo\Nums;
 class PrimesTest extends \PHPUnit\Framework\TestCase {
 
     /**
+     *
+     * @var Primes
+     */
+    protected $obj;
+
+
+    /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp(): void {
+        $this->obj = new Primes();
     }
 
     /**
@@ -27,7 +35,27 @@ class PrimesTest extends \PHPUnit\Framework\TestCase {
      * @dataProvider calcProvider
      */
     public function testCalc($n, $expected) {
-        \PHPUnit\Framework\assertEquals($expected, Primes::calc($n)) ;
+        \PHPUnit\Framework\assertEquals($expected, $this->obj->calc($n)) ;
+    }
+
+    /**
+     * @covers Algo\Nums\Primes::getLog
+     * @dataProvider getLogProvider
+     */
+    public function testGetLog($n) {
+        $this->obj->calc($n);
+        \PHPUnit\Framework\assertEquals($n, count($this->obj->getLog()));
+    }
+
+    public function getLogProvider() {
+        return [
+            [ 0 ],
+#            [ 1 ],
+            [ 10 ],
+            [ 15 ],
+            [ 20 ],
+            [ 25 ],
+        ];
     }
 
     public function calcProvider() {
