@@ -13,7 +13,6 @@ class PrimesTest extends \PHPUnit\Framework\TestCase {
      */
     protected $obj;
 
-
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
@@ -35,7 +34,7 @@ class PrimesTest extends \PHPUnit\Framework\TestCase {
      * @dataProvider calcProvider
      */
     public function testCalc($n, $expected) {
-        \PHPUnit\Framework\assertEquals($expected, $this->obj->calc($n)) ;
+        \PHPUnit\Framework\assertEquals($expected, $this->obj->calc($n));
     }
 
     /**
@@ -49,42 +48,43 @@ class PrimesTest extends \PHPUnit\Framework\TestCase {
 
     public function getLogProvider() {
         return [
-            [ 0 ],
+            [0],
 #            [ 1 ],
-            [ 10 ],
-            [ 15 ],
-            [ 20 ],
-            [ 25 ],
+            [10],
+            [15],
+            [20],
+            [25],
         ];
     }
 
     public function calcProvider() {
         return [
-            [ 1, 2 ],
-            [ 2, 3 ],
-            [ 3, 5 ],
-            [ 4, 7 ],
-            [ 5, 11 ],
-            [ 6, 13 ],
-            [ 7, 17 ],
-            [ 8, 19 ],
-            [ 9, 23 ],
-            [ 10, 29 ],
-            [ 11, 31 ],
-            [ 12, 37 ],
-            [ 13, 41 ],
-            [ 14, 43 ],
-            [ 15, 47 ],
-            [ 16, 53 ],
-            [ 17, 59 ],
-            [ 18, 61 ],
-            [ 19, 67 ],
-            [ 20, 71 ],
-            [ 21, 73 ],
-            [ 22, 79 ],
-            [ 23, 83 ],
-            [ 24, 89 ],
-            [ 25, 97 ],
+            [1, 2],
+            [2, 3],
+            [3, 5],
+            [4, 7],
+            [5, 11],
+            [6, 13],
+            [7, 17],
+            [8, 19],
+            [9, 23],
+            [10, 29],
+            [11, 31],
+            [12, 37],
+            [13, 41],
+            [14, 43],
+            [15, 47],
+            [16, 53],
+            [17, 59],
+            [18, 61],
+            [19, 67],
+            [20, 71],
+            [21, 73],
+            [22, 79],
+            [23, 83],
+            [24, 89],
+            [25, 97],
         ];
     }
+
 }

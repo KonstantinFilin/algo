@@ -4,10 +4,6 @@ namespace Algo\Nums;
 
 class Primes {
 
-    /**
-     *
-     * @var array
-     */
     protected $log = [];
 
     public function calc(int $n): int {
